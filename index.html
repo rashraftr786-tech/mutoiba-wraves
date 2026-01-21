@@ -3,53 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GPS Pethgam Wagoora | Admin</title>
+    <title>GPS Pethgam Wagoora | Super Speciality Admin</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="p-4 md:p-8">
+<body class="bg-blue-50">
 
-    <div class="shape" style="top: 10%; left: 5%; width: 100px;">☁️</div>
-    <div class="shape" style="top: 20%; right: 10%; width: 80px; animation-delay: 2s;">🎈</div>
+    <div class="rainbow-wave-container">
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+    </div>
 
-    <header class="flex flex-col md:flex-row justify-between items-center kid-card p-6 mb-8">
-        <div id="school-logo" class="text-center md:text-left">
-            <h1 id="logo-en" class="text-2xl font-bold text-blue-500">GPS Pethgam Wagoora</h1>
-            <h1 id="logo-ur" class="hidden text-3xl font-bold text-green-500" dir="rtl">گورنمنٹ پرائمری سکول پتھگام واگورہ</h1>
-        </div>
+    <div class="floating-assets">
+        <span class="asset cloud-1">☁️</span>
+        <span class="asset cloud-2">☁️</span>
+        <span class="asset balloon-1">🎈</span>
+        <span class="asset star-1">⭐</span>
+        <span class="asset sun">☀️</span>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 py-6">
         
-        <nav class="flex gap-4 mt-4 md:mt-0">
-            <button onclick="toggleLang('en')" class="btn-rainbow">English</button>
-            <button onclick="toggleLang('ur')" class="btn-rainbow">اردو / Kashmiri</button>
-        </nav>
-    </header>
+        <header class="kid-card bg-white/80 backdrop-blur-md p-6 flex flex-col md:flex-row justify-between items-center border-b-4 border-yellow-300 mb-10">
+            <div id="school-logo" class="text-center md:text-left">
+                <div id="logo-container" class="transition-all duration-500">
+                    <h1 class="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 drop-shadow-sm">
+                        GPS PETHGAM WAGOORA
+                    </h1>
+                    <p class="text-gray-500 font-bold tracking-widest text-xs">SUPER SPECIALITY PRIMARY SCHOOL</p>
+                </div>
+            </div>
 
-    <main class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        
-        <div class="kid-card p-6 text-center cursor-pointer" onclick="showModule('admission')">
-            <div class="text-5xl mb-4">📝</div>
-            <h3 class="text-xl font-bold text-gray-700">Admission System</h3>
-            <p class="text-gray-500 text-sm">Enroll new little stars!</p>
+            <div class="flex gap-2 mt-4 md:mt-0 bg-white/50 p-2 rounded-full shadow-inner">
+                <button onclick="changeLang('en')" class="px-6 py-2 rounded-full font-bold transition-all hover:bg-white hover:shadow-md text-blue-600">English</button>
+                <button onclick="changeLang('ur')" class="px-6 py-2 rounded-full font-bold transition-all hover:bg-white hover:shadow-md text-green-600 font-urdu">اردو</button>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <div class="kid-card-modern group" onclick="showModule('admission')">
+                <div class="icon-circle bg-pink-100 group-hover:bg-pink-200">📝</div>
+                <h3 class="text-xl font-bold text-gray-700">Admission</h3>
+                <p class="text-sm text-gray-500">Enroll new students with auto-ID</p>
+                <div class="card-glow bg-pink-400"></div>
+            </div>
+
+            <div class="kid-card-modern group" onclick="showModule('students')">
+                <div class="icon-circle bg-yellow-100 group-hover:bg-yellow-200">🎒</div>
+                <h3 class="text-xl font-bold text-gray-700">Students</h3>
+                <p class="text-sm text-gray-500">Manage records & filters</p>
+                <div class="card-glow bg-yellow-400"></div>
+            </div>
+
+            <div class="kid-card-modern group" onclick="showModule('certificates')">
+                <div class="icon-circle bg-blue-100 group-hover:bg-blue-200">📜</div>
+                <h3 class="text-xl font-bold text-gray-700">Certificates</h3>
+                <p class="text-sm text-gray-500">Bonafide, Character, DOB</p>
+                <div class="card-glow bg-blue-400"></div>
+            </div>
+
+            <div class="kid-card-modern group" onclick="showModule('diary')">
+                <div class="icon-circle bg-green-100 group-hover:bg-green-200">📓</div>
+                <h3 class="text-xl font-bold text-gray-700">Digital Diary</h3>
+                <p class="text-sm text-gray-500">Homework & Notifications</p>
+                <div class="card-glow bg-green-400"></div>
+            </div>
+
         </div>
 
-        <div class="kid-card p-6 text-center cursor-pointer" onclick="showModule('students')">
-            <div class="text-5xl mb-4">🎒</div>
-            <h3 class="text-xl font-bold text-gray-700">Student Manager</h3>
-            <p class="text-gray-500 text-sm">View and Edit database</p>
-        </div>
-
-        <div class="kid-card p-6 text-center cursor-pointer" onclick="showModule('certificates')">
-            <div class="text-5xl mb-4">🏆</div>
-            <h3 class="text-xl font-bold text-gray-700">Certificates</h3>
-            <p class="text-gray-500 text-sm">Print Character & DOB</p>
-        </div>
-
-    </main>
-
-    <section id="module-container" class="mt-12 hidden kid-card p-8 bg-white">
+        <section id="module-display" class="mt-12 hidden transition-all duration-700">
+            <div class="bg-white/90 backdrop-blur-xl rounded-[40px] p-10 border-4 border-white shadow-2xl relative overflow-hidden">
+                <button onclick="closeModule()" class="absolute top-5 right-5 text-3xl hover:rotate-90 transition-transform">❌</button>
+                <div id="module-content"></div>
+            </div>
         </section>
 
-    <script src="script.js"></script>
+    </div>
+
+    <footer class="fixed bottom-0 w-full bg-white/60 backdrop-blur-sm border-t-2 border-white py-2">
+        <marquee class="font-bold text-blue-600">
+            Welcome to GPS Pethgam Wagoora Super Speciality Management Portal • Online Admissions for 2026 are now open! • Check Digital Diary for latest homework.
+        </marquee>
+    </footer>
+
 </body>
 </html>
