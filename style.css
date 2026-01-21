@@ -1,63 +1,92 @@
-:root {
-  --pastel-red: #ffadad;
-  --pastel-orange: #ffd6a5;
-  --pastel-yellow: #fdffb6;
-  --pastel-green: #caffbf;
-  --pastel-blue: #9bf6ff;
-  --pastel-purple: #a0c4ff;
-  --pastel-pink: #ffc6ff;
-  --glass: rgba(255, 255, 255, 0.7);
+/* 1. ULTRA-COLORFUL DYNAMIC BACKGROUND */
+.rainbow-wave-container {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    /* Soft pastel mesh gradient */
+    background: radial-gradient(at 0% 0%, #ffadad 0%, transparent 50%),
+                radial-gradient(at 100% 0%, #ffd6a5 0%, transparent 50%),
+                radial-gradient(at 100% 100%, #fdffb6 0%, transparent 50%),
+                radial-gradient(at 0% 100%, #caffbf 0%, transparent 50%),
+                #f8f9fa;
 }
 
-body {
-  font-family: 'Quicksand', sans-serif;
-  background: linear-gradient(-45deg, #fff5f5, #f5faff, #f5fff5);
-  margin: 0;
-  overflow-x: hidden;
+/* 2. ENHANCED MULTI-LAYER WAVE */
+.wave {
+    position: absolute;
+    bottom: 0; left: 0; width: 200%; height: 180px;
+    background: url('https://raw.githubusercontent.com/66-tech/assets/main/wave.svg');
+    background-size: 50% 100px;
+    animation: waveMove 12s linear infinite;
 }
 
-/* Rainbow Gradient Buttons */
-.btn-rainbow {
-  background: linear-gradient(90deg, var(--pastel-blue), var(--pastel-purple));
-  border: none;
-  border-radius: 20px;
-  padding: 10px 25px;
-  color: #444;
-  font-weight: bold;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.wave1 { bottom: 0; opacity: 0.5; filter: drop-shadow(0 0 10px #9bf6ff); }
+.wave2 { bottom: 30px; animation-delay: -3s; animation-duration: 18s; opacity: 0.3; filter: hue-rotate(45deg); }
+.wave3 { bottom: 15px; animation-delay: -6s; animation-duration: 25s; opacity: 0.2; filter: hue-rotate(90deg); }
+
+/* 3. SUPER SPECIALITY MODERN CARDS */
+.kid-card-modern {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 40px;
+    padding: 2.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05), 
+                inset 0 0 15px rgba(255, 255, 255, 0.5);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    overflow: visible; /* To allow glow to bleed out */
 }
 
-.btn-rainbow:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 6px 20px rgba(160, 196, 255, 0.4);
+/* Dynamic Border Color per Card on Hover */
+.kid-card-modern:nth-child(1):hover { border-color: #ffadad; box-shadow: 0 25px 50px rgba(255, 173, 173, 0.3); }
+.kid-card-modern:nth-child(2):hover { border-color: #ffd6a5; box-shadow: 0 25px 50px rgba(255, 214, 165, 0.3); }
+.kid-card-modern:nth-child(3):hover { border-color: #9bf6ff; box-shadow: 0 25px 50px rgba(155, 246, 255, 0.3); }
+.kid-card-modern:nth-child(4):hover { border-color: #bdb2ff; box-shadow: 0 25px 50px rgba(189, 178, 255, 0.3); }
+
+.kid-card-modern:hover {
+    transform: translateY(-15px) scale(1.03);
 }
 
-/* Soft Floating Cards */
-.kid-card {
-  background: var(--glass);
-  backdrop-filter: blur(10px);
-  border-radius: 30px;
-  border: 4px solid white;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+/* 4. GLOWING ICON CIRCLES */
+.icon-circle {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 1.5rem;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Organic kid-friendly shape */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.8rem;
+    background: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    animation: morph 6s ease-in-out infinite;
+    transition: transform 0.6s ease;
 }
 
-.kid-card:hover {
-  transform: translateY(-10px);
-  border-color: var(--pastel-yellow);
+@keyframes morph {
+    0%, 100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+    50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
 }
 
-/* Background Shapes Animation */
-.shape {
-  position: absolute;
-  z-index: -1;
-  opacity: 0.5;
-  animation: float 10s infinite ease-in-out;
+/* 5. FLOATING ASSETS WITH NEON GLOW */
+.asset {
+    position: fixed;
+    z-index: 0;
+    filter: drop-shadow(0 0 15px rgba(255,255,255,0.8));
+    animation: floatAnim 10s infinite ease-in-out;
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(10deg); }
-}
+.cloud-1 { top: 10%; left: 8%; font-size: 100px; color: white; }
+.balloon-1 { top: 35%; right: 10%; font-size: 60px; filter: hue-rotate(10deg); }
+.star-1 { bottom: 20%; left: 15%; font-size: 40px; color: gold; animation-delay: -2s; }
 
+/* 6. RAINBOW TEXT FOR TITLES */
+.rainbow-text {
+    background: linear-gradient(to right, #ffadad, #ffd6a5, #fdffb6, #caffbf, #9bf6ff, #a0c4ff, #ffc6ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+}
