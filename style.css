@@ -1,52 +1,42 @@
-/* RAINBOW BUTTONS - Soft Pastel Gradient */
-.btn-rainbow {
-    background: linear-gradient(90deg, #ffadad, #ffd6a5, #caffbf, #9bf6ff);
-    border-radius: 50px;
-    font-weight: 800;
-    color: #444;
-    transition: 0.4s;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.btn-rainbow:hover {
-    transform: scale(1.05);
-    filter: brightness(1.05);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-}
-
-/* MODERN KID CARD (Christ Excel Inspired) */
+/* Custom Soft Shadows & Rounds */
 .kid-card-modern {
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    border-radius: 30px;
     background: white;
-    border-radius: 40px;
-    padding: 2.5rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 2px solid #f8fafc;
+    transition: all 0.4s ease;
 }
 
 .kid-card-modern:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(160, 196, 255, 0.3);
 }
 
-/* RAINBOW ANIMATIONS */
-@keyframes fade-in {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+/* Rainbow Button Gradient */
+.btn-rainbow {
+    background: linear-gradient(90deg, #ffadad, #ffd6a5, #caffbf, #9bf6ff, #a0c4ff);
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    color: #444;
+    transition: 0.3s;
 }
-.animate-fade-in { animation: fade-in 1s forwards; }
 
-/* LOGO URDU/KASHMIRI SUPPORT */
-.font-urdu { font-family: 'Noto Nastaliq Urdu', serif; }
-    background: url('https://raw.githubusercontent.com/66-tech/assets/main/wave.svg');
-    background-size: 1000px 100px;
-    animation: waveAnim 15s linear infinite;
-    opacity: 0.2;
+/* Print CSS for Certificates */
+@media print {
+    body * { visibility: hidden; }
+    #print-area, #print-area * { visibility: visible; }
+    #print-area {
+        position: absolute;
+        left: 0; top: 0;
+        width: 210mm; height: 297mm;
+        padding: 20mm;
+        border: 15px solid #a0c4ff;
+    }
 }
-.wave1 { filter: hue-rotate(0deg); }
-.wave2 { bottom: 10px; animation-delay: -5s; opacity: 0.1; filter: hue-rotate(90deg); }
 
-@keyframes waveAnim {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+/* Floating Shapes Animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
 }
+.floating-asset { animation: float 6s infinite ease-in-out; }
