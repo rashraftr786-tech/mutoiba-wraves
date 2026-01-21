@@ -3,234 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mutoiba Weaves | Wagoora's Finest Textiles</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #4a4a4a;
-            --accent: #b5838d;
-            --bg: #faf9f6;
-            --white: #ffffff;
-        }
-
-        body {
-            margin: 0;
-            font-family: 'Lato', sans-serif;
-            background-color: var(--bg);
-            color: var(--primary);
-            line-height: 1.6;
-        }
-
-        /* Navigation */
-        nav {
-            padding: 2rem;
-            text-align: center;
-            background: var(--white);
-            border-bottom: 1px solid #eee;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin: 0;
-        }
-
-        .tagline {
-            font-size: 0.8rem;
-            letter-spacing: 3px;
-            color: var(--accent);
-            text-transform: uppercase;
-        }
-
-        /* Hero Section */
-        header {
-            height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), 
-                        url('https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&q=80&w=1000') center/cover;
-            color: white;
-        }
-
-        .hero-text h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-
-        /* Product Grid */
-        .container {
-            max-width: 1100px;
-            margin: 4rem auto;
-            padding: 0 20px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .product-card {
-            background: var(--white);
-            padding: 15px;
-            border-radius: 4px;
-            transition: transform 0.3s ease;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .product-img {
-            width: 100%;
-            height: 300px;
-            background: #e0e0e0;
-            object-fit: cover;
-            margin-bottom: 15px;
-        }
-
-        .price {
-            font-weight: bold;
-            color: var(--accent);
-            display: block;
-            margin: 10px 0;
-        }
-
-        /* Buttons */
-        .btn {
-            background: var(--primary);
-            color: white;
-            padding: 12px 24px;
-            border: none;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            cursor: pointer;
-            width: 100%;
-            transition: opacity 0.3s;
-        }
-
-        .btn:hover {
-            opacity: 0.8;
-        }
-
-        /* Order Modal (Simplified) */
-        #order-modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.5);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            background: white;
-            padding: 40px;
-            max-width: 400px;
-            width: 90%;
-            border-radius: 8px;
-            text-align: left;
-        }
-
-        input {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-        }
-
-        footer {
-            text-align: center;
-            padding: 4rem;
-            background: #333;
-            color: #ccc;
-            margin-top: 4rem;
-        }
-    </style>
+    <title>GPS Pethgam Wagoora | Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="p-4 md:p-8">
 
-    <nav>
-        <h2 class="logo">Mutoiba Weaves</h2>
-        <div class="tagline">Wagoora's Finest Fabrics</div>
-    </nav>
+    <div class="shape" style="top: 10%; left: 5%; width: 100px;">☁️</div>
+    <div class="shape" style="top: 20%; right: 10%; width: 80px; animation-delay: 2s;">🎈</div>
 
-    <header>
-        <div class="hero-text">
-            <h1>Timeless Artistry</h1>
-            <p>Hand-selected textiles delivered from Wagoora to your doorstep.</p>
+    <header class="flex flex-col md:flex-row justify-between items-center kid-card p-6 mb-8">
+        <div id="school-logo" class="text-center md:text-left">
+            <h1 id="logo-en" class="text-2xl font-bold text-blue-500">GPS Pethgam Wagoora</h1>
+            <h1 id="logo-ur" class="hidden text-3xl font-bold text-green-500" dir="rtl">گورنمنٹ پرائمری سکول پتھگام واگورہ</h1>
         </div>
+        
+        <nav class="flex gap-4 mt-4 md:mt-0">
+            <button onclick="toggleLang('en')" class="btn-rainbow">English</button>
+            <button onclick="toggleLang('ur')" class="btn-rainbow">اردو / Kashmiri</button>
+        </nav>
     </header>
 
-    <div class="container">
-        <h2 style="font-family: 'Playfair Display'; text-align: center; margin-bottom: 3rem;">Featured Collection</h2>
-        <div class="grid">
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&q=80&w=400" alt="Fabric" class="product-img">
-                <h3>Premium Kashmiri Linen</h3>
-                <span class="price">₹1,200 / meter</span>
-                <button class="btn" onclick="openOrder('Premium Kashmiri Linen')">Order Online</button>
-            </div>
-
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1620783770629-1225728a76f8?auto=format&fit=crop&q=80&w=400" alt="Fabric" class="product-img">
-                <h3>Organic Cotton Weave</h3>
-                <span class="price">₹850 / meter</span>
-                <button class="btn" onclick="openOrder('Organic Cotton Weave')">Order Online</button>
-            </div>
-
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&q=80&w=400" alt="Fabric" class="product-img">
-                <h3>Textured Wool Blend</h3>
-                <span class="price">₹2,500 / meter</span>
-                <button class="btn" onclick="openOrder('Textured Wool Blend')">Order Online</button>
-            </div>
+    <main class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="kid-card p-6 text-center cursor-pointer" onclick="showModule('admission')">
+            <div class="text-5xl mb-4">📝</div>
+            <h3 class="text-xl font-bold text-gray-700">Admission System</h3>
+            <p class="text-gray-500 text-sm">Enroll new little stars!</p>
         </div>
-    </div>
 
-    <div id="order-modal">
-        <div class="modal-content">
-            <h2 id="product-name" style="font-family: 'Playfair Display';">Confirm Order</h2>
-            <p>Please enter your details to proceed to payment.</p>
-            <input type="text" placeholder="Your Name" required>
-            <input type="text" placeholder="Shipping Address" required>
-            <input type="tel" placeholder="Phone Number" required>
-            <button class="btn" style="background: var(--accent);" onclick="confirmOrder()">Confirm & Pay</button>
-            <button class="btn" style="background: none; color: #999; margin-top: 10px;" onclick="closeOrder()">Cancel</button>
+        <div class="kid-card p-6 text-center cursor-pointer" onclick="showModule('students')">
+            <div class="text-5xl mb-4">🎒</div>
+            <h3 class="text-xl font-bold text-gray-700">Student Manager</h3>
+            <p class="text-gray-500 text-sm">View and Edit database</p>
         </div>
-    </div>
 
-    <footer>
-        <p>&copy; 2026 Mutoiba Weaves, Wagoora. All Rights Reserved.</p>
-        <p>Contact: info@mutoibaweaves.com</p>
-    </footer>
+        <div class="kid-card p-6 text-center cursor-pointer" onclick="showModule('certificates')">
+            <div class="text-5xl mb-4">🏆</div>
+            <h3 class="text-xl font-bold text-gray-700">Certificates</h3>
+            <p class="text-gray-500 text-sm">Print Character & DOB</p>
+        </div>
 
-    <script>
-        function openOrder(name) {
-            document.getElementById('order-modal').style.display = 'flex';
-            document.getElementById('product-name').innerText = name;
-        }
+    </main>
 
-        function closeOrder() {
-            document.getElementById('order-modal').style.display = 'none';
-        }
+    <section id="module-container" class="mt-12 hidden kid-card p-8 bg-white">
+        </section>
 
-        function confirmOrder() {
-            alert("Order Confirmed! Redirecting to Secure Payment Gateway...");
-            window.location.reload();
-        }
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
