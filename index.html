@@ -3,85 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GPS Pethgam Wagoora | Excellence in Education</title>
+    <title>GPS Pethgam Wagoora | Admin Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            min-height: 100vh;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+        }
+        .stat-card { @apply rounded-2xl p-4 flex items-center justify-between text-white shadow-lg transition-transform hover:scale-105; }
+        .grid-item { @apply rounded-2xl p-6 flex flex-col items-center justify-center text-white shadow-md cursor-pointer transition-all hover:-translate-y-2; }
+    </style>
 </head>
-<body class="bg-gray-50">
+<body class="p-4 md:p-8">
 
-    <div class="bg-gradient-to-r from-blue-400 to-purple-500 text-white py-2 px-6 hidden md:flex justify-between items-center text-sm font-bold">
-        <div>📍 Pethgam, Wagoora, Baramulla | 📧 info@gpspethgam.edu.in</div>
-        <div class="flex gap-4">
-            <a href="#" class="hover:underline">Staff Login</a>
-            <a href="#" class="hover:underline">Parent Portal</a>
-        </div>
-    </div>
-
-    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b-2 border-yellow-200 px-6 py-4 flex justify-between items-center">
-        <div class="flex items-center gap-3">
-            <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center font-bold text-white shadow-lg">GPS</div>
+    <header class="flex flex-col md:flex-row justify-between items-center mb-8 bg-blue-700 p-6 rounded-[2rem] text-white shadow-xl relative overflow-hidden">
+        <div class="flex items-center gap-4 z-10">
+            <div class="bg-white p-2 rounded-full shadow-inner">
+                <img src="https://via.placeholder.com/60" alt="Logo" class="w-12 h-12">
+            </div>
             <div>
-                <h1 class="text-xl font-black text-blue-600 leading-tight">GPS PETHGAM</h1>
-                <p class="text-[10px] tracking-[0.2em] text-gray-400 font-bold uppercase">Super Speciality School</p>
+                <h1 class="text-2xl md:text-4xl font-black">Govt. Primary School Pethgam Wagoora</h1>
+                <p class="text-blue-200 font-bold tracking-widest">Baramulla • Super Speciality Primary School</p>
             </div>
         </div>
-        <div class="hidden lg:flex gap-8 font-bold text-gray-600 uppercase text-sm">
-            <a href="#" class="hover:text-blue-500 transition">Home</a>
-            <a href="#" class="hover:text-blue-500 transition">About Us</a>
-            <a href="#" class="hover:text-blue-500 transition">Academics</a>
-            <a href="#" class="hover:text-blue-500 transition">Gallery</a>
-            <a href="#" class="hover:text-blue-500 transition">Contact</a>
-        </div>
-        <button onclick="openModule('admission')" class="btn-rainbow px-6 py-2 text-sm">Enroll Now</button>
-    </nav>
-
-    <header class="relative overflow-hidden bg-white py-16 md:py-24 px-6">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-12">
-            <div class="animate-fade-in">
-                <span class="bg-pink-100 text-pink-500 px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest">Welcome to GPS</span>
-                <h2 class="text-4xl md:text-6xl font-black text-gray-800 mt-4 leading-tight">
-                    Nurturing <span class="text-blue-500">Little Stars</span> for a Brighter Future
-                </h2>
-                <p class="text-gray-500 mt-6 text-lg">We provide a world-class "Super Speciality" environment for the children of Pethgam Wagoora, blending tradition with modern technology.</p>
-                <div class="mt-10 flex gap-4">
-                    <button class="bg-blue-500 text-white px-8 py-4 rounded-full font-bold shadow-xl hover:bg-blue-600 transition">Explore Programs</button>
-                    <button class="bg-white border-2 border-gray-100 px-8 py-4 rounded-full font-bold shadow-md hover:border-blue-200 transition">Learn More</button>
+        <div class="mt-4 md:mt-0 flex items-center gap-4 bg-white/10 p-3 rounded-2xl z-10">
+            <div class="text-right">
+                <p class="text-sm">Welcome, Headmaster!</p>
+                <div class="flex gap-2 mt-1">
+                    <button class="text-xs bg-white/20 px-3 py-1 rounded-full">English</button>
+                    <button class="text-xs bg-white/20 px-3 py-1 rounded-full font-urdu">اردو</button>
                 </div>
             </div>
-            <div class="relative">
-                <div class="absolute -top-10 -left-10 text-6xl animate-bounce">🎨</div>
-                <div class="absolute -bottom-10 -right-10 text-6xl animate-pulse">🚀</div>
-                <div class="rounded-[60px] overflow-hidden border-8 border-white shadow-2xl rotate-2">
-                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800" alt="Students">
-                </div>
-            </div>
+            <img src="https://via.placeholder.com/50" class="rounded-full border-2 border-white shadow-md">
         </div>
+        <div class="absolute right-20 top-0 opacity-20 text-9xl">🎓</div>
     </header>
 
-    <section class="py-20 bg-blue-50/50">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h3 class="text-pink-500 font-bold uppercase tracking-widest text-sm">Our Classes</h3>
-            <h2 class="text-4xl font-black text-gray-800 mt-2 mb-12">Educational Programs</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="kid-card-modern p-8 group border-b-8 border-blue-400">
-                    <div class="w-20 h-20 bg-blue-100 rounded-2xl mx-auto flex items-center justify-center text-4xl mb-6 group-hover:rotate-12 transition">🧸</div>
-                    <h4 class="text-xl font-black text-gray-800">Pre-School</h4>
-                    <p class="text-gray-500 text-sm mt-4">Ages 3-5 Years. Learning through play and colors.</p>
-                </div>
-                <div class="kid-card-modern p-8 group border-b-8 border-pink-400">
-                    <div class="w-20 h-20 bg-pink-100 rounded-2xl mx-auto flex items-center justify-center text-4xl mb-6 group-hover:rotate-12 transition">📚</div>
-                    <h4 class="text-xl font-black text-gray-800">Primary Education</h4>
-                    <p class="text-gray-500 text-sm mt-4">Ages 6-12 Years. Comprehensive academic foundation.</p>
-                </div>
-                </div>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div class="stat-card bg-emerald-500">
+            <div><p class="text-xs uppercase opacity-80">Total Students</p><h2 class="text-3xl font-black">320</h2></div>
+            <div class="text-4xl opacity-40">🧑‍🤝‍🧑</div>
         </div>
-    </section>
-
-    <div class="fixed bottom-10 right-10 z-50">
-        <button onclick="toggleAdminPanel()" class="w-16 h-16 bg-gradient-to-tr from-purple-600 to-blue-600 rounded-full text-white text-2xl shadow-2xl flex items-center justify-center hover:scale-110 transition">⚙️</button>
+        <div class="stat-card bg-orange-500">
+            <div><p class="text-xs uppercase opacity-80">Total Teachers</p><h2 class="text-3xl font-black">18</h2></div>
+            <div class="text-4xl opacity-40">👩‍🏫</div>
+        </div>
+        <div class="stat-card bg-purple-600">
+            <div><p class="text-xs uppercase opacity-80">Classes</p><h2 class="text-3xl font-black">08</h2></div>
+            <div class="text-4xl opacity-40">🏫</div>
+        </div>
+        <div class="stat-card bg-sky-600">
+            <div><p class="text-xs uppercase opacity-80">Attendance</p><h2 class="text-3xl font-black">95%</h2></div>
+            <div class="text-4xl opacity-40">📅</div>
+        </div>
     </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <div class="glass-card rounded-[2.5rem] p-6 border-t-8 border-indigo-600">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-black text-indigo-900">Notice Board 📢</h3>
+                <button class="text-xs bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full font-bold">View All</button>
+            </div>
+            <ul class="space-y-4">
+                <li class="flex gap-3 items-start"><span class="w-3 h-3 rounded-full bg-pink-500 mt-1"></span> <p class="text-gray-700 font-bold">PTM on 25th April</p></li>
+                <li class="flex gap-3 items-start"><span class="w-3 h-3 rounded-full bg-yellow-500 mt-1"></span> <p class="text-gray-700 font-bold">Health Camp on 28th April</p></li>
+                <li class="flex gap-3 items-start"><span class="w-3 h-3 rounded-full bg-pink-500 mt-1"></span> <p class="text-gray-700 font-bold">Summer Vacation from 10th June</p></li>
+            </ul>
+        </div>
+
+        <div class="glass-card rounded-[2.5rem] p-6 lg:col-span-1">
+            <h3 class="text-xl font-black text-gray-800 mb-6">Student Performance 📈</h3>
+            <div class="flex items-end justify-between h-40 gap-2">
+                <div class="w-full bg-emerald-500 rounded-t-lg relative" style="height: 90%"><span class="absolute -top-6 left-1/2 -translate-x-1/2 text-xs font-bold">A+</span></div>
+                <div class="w-full bg-orange-400 rounded-t-lg relative" style="height: 70%"><span class="absolute -top-6 left-1/2 -translate-x-1/2 text-xs font-bold">A</span></div>
+                <div class="w-full bg-blue-400 rounded-t-lg relative" style="height: 40%"><span class="absolute -top-6 left-1/2 -translate-x-1/2 text-xs font-bold">B</span></div>
+                <div class="w-full bg-red-400 rounded-t-lg relative" style="height: 10%"><span class="absolute -top-6 left-1/2 -translate-x-1/2 text-xs font-bold">C</span></div>
+            </div>
+            <div class="flex justify-between mt-2 text-[10px] font-bold text-gray-400 uppercase">
+                <span>3+</span><span>10%</span><span>20%</span><span>5%</span>
+            </div>
+        </div>
+
+        <div class="glass-card rounded-[2.5rem] p-6 border-t-8 border-orange-400">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-black text-orange-900">Upcoming Events 📅</h3>
+                <button class="text-xs bg-orange-100 text-orange-600 px-3 py-1 rounded-full font-bold">Calendar</button>
+            </div>
+            <div class="space-y-4">
+                <div class="flex justify-between border-b pb-2"><span>🏅 Sports Day</span> <span class="text-gray-400 text-xs font-bold">2nd May</span></div>
+                <div class="flex justify-between border-b pb-2"><span>🎨 Art Competition</span> <span class="text-gray-400 text-xs font-bold">5th May</span></div>
+                <div class="flex justify-between"><span>🌍 Environment Day</span> <span class="text-gray-400 text-xs font-bold">7th June</span></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
+        <div class="grid-item bg-sky-500">
+            <span class="text-4xl mb-2">💻</span>
+            <span class="font-bold">E-Learning</span>
+        </div>
+        <div class="grid-item bg-emerald-600">
+            <span class="text-4xl mb-2">⏰</span>
+            <span class="font-bold">Timetable</span>
+        </div>
+        <div class="grid-item bg-teal-600">
+            <span class="text-4xl mb-2">📷</span>
+            <span class="font-bold">Gallery</span>
+        </div>
+        <div class="grid-item bg-orange-600">
+            <span class="text-4xl mb-2">🍲</span>
+            <span class="font-bold">Meal Menu</span>
+        </div>
+    </div>
+
+    <footer class="mt-8 flex justify-center gap-4 no-print">
+        <button class="bg-white px-6 py-2 rounded-full shadow font-bold text-blue-600 hover:bg-blue-50">📚 Library</button>
+        <button class="bg-white px-6 py-2 rounded-full shadow font-bold text-blue-600 hover:bg-blue-50">👨‍🏫 Teacher Portal</button>
+        <button class="bg-white px-6 py-2 rounded-full shadow font-bold text-blue-600 hover:bg-blue-50">👪 Parent Portal</button>
+    </footer>
 
 </body>
 </html>
