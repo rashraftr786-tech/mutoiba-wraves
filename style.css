@@ -1,108 +1,43 @@
-/* 1. CORE VARIABLES & FONTS */
-:root {
-    --p-pink: #ffc6ff;
-    --p-yellow: #fdffb6;
-    --p-blue: #9bf6ff;
-    --p-purple: #a0c4ff;
-    --p-green: #caffbf;
-    --soft-shadow: 0 6px 18px rgba(0,0,0,0.12);
+/* RAINBOW BUTTONS - Soft Pastel Gradient */
+.btn-rainbow {
+    background: linear-gradient(90deg, #ffadad, #ffd6a5, #caffbf, #9bf6ff);
+    border-radius: 50px;
+    font-weight: 800;
+    color: #444;
+    transition: 0.4s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-body {
-    font-family: 'Quicksand', sans-serif;
-    background: #fdfbff;
-    margin: 0;
-    overflow-x: hidden;
+.btn-rainbow:hover {
+    transform: scale(1.05);
+    filter: brightness(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
-.font-urdu { font-family: 'Noto Nastaliq Urdu', serif; line-height: 2.5; }
-
-/* 2. RAINBOW TEXT & BUTTONS */
-.rainbow-text {
-    background: linear-gradient(90deg, #ffadad, #ffd6a5, #fdffb6, #caffbf, #9bf6ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.btn-rainbow-soft {
-    background: white;
-    border-radius: 30px;
-    font-weight: bold;
-    color: #666;
-    transition: all 0.3s ease;
-    box-shadow: var(--soft-shadow);
-}
-
-.btn-rainbow-soft:hover {
-    background: linear-gradient(to right, var(--p-pink), var(--p-yellow));
-    transform: translateY(-2px);
-    color: #333;
-}
-
-/* 3. SUPER SPECIALITY CARDS (30px Radius) */
+/* MODERN KID CARD (Christ Excel Inspired) */
 .kid-card-modern {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
-    border-radius: 30px; /* As requested */
+    background: white;
+    border-radius: 40px;
     padding: 2.5rem;
-    text-align: center;
-    border: 3px solid white;
-    box-shadow: var(--soft-shadow); /* As requested */
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    cursor: pointer;
-    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid #f8fafc;
 }
 
 .kid-card-modern:hover {
-    transform: translateY(-10px) scale(1.02);
-    border-color: var(--p-blue);
-    box-shadow: 0 15px 30px rgba(160, 196, 255, 0.4);
+    transform: translateY(-15px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.1);
 }
 
-/* 4. ICON BLOBS (Morphing Shapes) */
-.icon-blob {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto 1.5rem;
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
-    animation: morphing 6s ease-in-out infinite;
-    transition: transform 0.3s ease;
+/* RAINBOW ANIMATIONS */
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
+.animate-fade-in { animation: fade-in 1s forwards; }
 
-@keyframes morphing {
-    0%, 100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-    50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
-}
-
-/* 5. FLOATING ASSETS (Clouds & Balloons) */
-.asset {
-    position: fixed;
-    z-index: 1;
-    opacity: 0.5;
-    animation: floating 10s infinite ease-in-out;
-}
-
-.cloud-1 { top: 10%; left: 5%; font-size: 5rem; animation-duration: 20s; }
-.balloon-1 { top: 20%; right: 10%; font-size: 4rem; animation-delay: -2s; }
-
-@keyframes floating {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-40px) rotate(10deg); }
-}
-
-/* 6. RAINBOW WAVES */
-.rainbow-wave-container {
-    position: fixed;
-    bottom: 0; left: 0; width: 100%; height: 120px;
-    z-index: 0;
-}
-.wave {
-    position: absolute;
-    bottom: 0; left: 0; width: 200%; height: 100px;
+/* LOGO URDU/KASHMIRI SUPPORT */
+.font-urdu { font-family: 'Noto Nastaliq Urdu', serif; }
     background: url('https://raw.githubusercontent.com/66-tech/assets/main/wave.svg');
     background-size: 1000px 100px;
     animation: waveAnim 15s linear infinite;
