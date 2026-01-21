@@ -3,75 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GPS Pethgam Wagoora | Super Speciality Admin</title>
+    <title>GPS Pethgam Wagoora | Excellence in Education</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="bg-gray-50">
 
-    <div class="background-assets">
-        <div class="asset cloud-1">☁️</div>
-        <div class="asset cloud-2">☁️</div>
-        <div class="asset balloon-1">🎈</div>
-        <div class="asset star-1">⭐</div>
-        <div class="asset balloon-2">🎈</div>
-    </div>
-
-    <div class="rainbow-wave-container">
-        <div class="wave wave1"></div>
-        <div class="wave wave2"></div>
-        <div class="wave wave3"></div>
-    </div>
-
-    <div class="relative z-10 max-w-7xl mx-auto px-4 pt-8 pb-20">
-        
-        <header class="header-card mb-12 flex flex-col items-center">
-            <div id="logo-display" class="text-center transition-all duration-500">
-                <div id="logo-en">
-                    <h1 class="text-4xl font-bold rainbow-text">Government Primary School Pethgam Wagoora</h1>
-                    <p class="text-gray-400 font-bold uppercase tracking-widest text-sm">Super Speciality Institution</p>
-                </div>
-                <div id="logo-ur" class="hidden font-urdu text-4xl text-green-600" dir="rtl">گورنمنٹ پرائمری سکول پتھگام واگورہ</div>
-                <div id="logo-ks" class="hidden font-urdu text-4xl text-blue-600" dir="rtl">گورنمنٹ پرائمری سکول پتھگام واگورہ‎ (کٲشُر)</div>
-            </div>
-
-            <div class="flex gap-4 mt-8 bg-white/40 p-2 rounded-full border border-white shadow-inner">
-                <button onclick="switchLogo('en')" class="btn-rainbow-soft px-6 py-2">English</button>
-                <button onclick="switchLogo('ur')" class="btn-rainbow-soft px-6 py-2">اردو</button>
-                <button onclick="switchLogo('ks')" class="btn-rainbow-soft px-6 py-2">کٲشُر</button>
-            </div>
-        </header>
-
-        <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="kid-card-modern group" onclick="openModule('admission')">
-                <div class="icon-blob bg-pink-100">📝</div>
-                <h3 class="text-2xl font-bold text-gray-700">Admission System</h3>
-                <p class="text-gray-500 mt-2">Auto-ID Generator & Online Enrollment</p>
-                <div class="card-glow"></div>
-            </div>
-
-            <div class="kid-card-modern group" onclick="openModule('students')">
-                <div class="icon-blob bg-blue-100">🎒</div>
-                <h3 class="text-2xl font-bold text-gray-700">Student Manager</h3>
-                <p class="text-gray-500 mt-2">Class-wise Filtering & ID Card Gen</p>
-                <div class="card-glow"></div>
-            </div>
-
-            <div class="kid-card-modern group" onclick="openModule('certs')">
-                <div class="icon-blob bg-yellow-100">🏆</div>
-                <h3 class="text-2xl font-bold text-gray-700">Certificate Hub</h3>
-                <p class="text-gray-500 mt-2">Bonafide, Character, DOB Templates</p>
-                <div class="card-glow"></div>
-            </div>
-        </main>
-
-        <div class="marquee-container mt-12 bg-white/80 backdrop-blur p-4 rounded-full border-2 border-white shadow-lg">
-            <marquee class="font-bold text-purple-600">✨ Welcome to GPS Pethgam Wagoora. Admissions for Academic Session 2026 are now open! Check the Digital Diary for daily updates. ✨</marquee>
+    <div class="bg-gradient-to-r from-blue-400 to-purple-500 text-white py-2 px-6 hidden md:flex justify-between items-center text-sm font-bold">
+        <div>📍 Pethgam, Wagoora, Baramulla | 📧 info@gpspethgam.edu.in</div>
+        <div class="flex gap-4">
+            <a href="#" class="hover:underline">Staff Login</a>
+            <a href="#" class="hover:underline">Parent Portal</a>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b-2 border-yellow-200 px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center font-bold text-white shadow-lg">GPS</div>
+            <div>
+                <h1 class="text-xl font-black text-blue-600 leading-tight">GPS PETHGAM</h1>
+                <p class="text-[10px] tracking-[0.2em] text-gray-400 font-bold uppercase">Super Speciality School</p>
+            </div>
+        </div>
+        <div class="hidden lg:flex gap-8 font-bold text-gray-600 uppercase text-sm">
+            <a href="#" class="hover:text-blue-500 transition">Home</a>
+            <a href="#" class="hover:text-blue-500 transition">About Us</a>
+            <a href="#" class="hover:text-blue-500 transition">Academics</a>
+            <a href="#" class="hover:text-blue-500 transition">Gallery</a>
+            <a href="#" class="hover:text-blue-500 transition">Contact</a>
+        </div>
+        <button onclick="openModule('admission')" class="btn-rainbow px-6 py-2 text-sm">Enroll Now</button>
+    </nav>
+
+    <header class="relative overflow-hidden bg-white py-16 md:py-24 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-12">
+            <div class="animate-fade-in">
+                <span class="bg-pink-100 text-pink-500 px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest">Welcome to GPS</span>
+                <h2 class="text-4xl md:text-6xl font-black text-gray-800 mt-4 leading-tight">
+                    Nurturing <span class="text-blue-500">Little Stars</span> for a Brighter Future
+                </h2>
+                <p class="text-gray-500 mt-6 text-lg">We provide a world-class "Super Speciality" environment for the children of Pethgam Wagoora, blending tradition with modern technology.</p>
+                <div class="mt-10 flex gap-4">
+                    <button class="bg-blue-500 text-white px-8 py-4 rounded-full font-bold shadow-xl hover:bg-blue-600 transition">Explore Programs</button>
+                    <button class="bg-white border-2 border-gray-100 px-8 py-4 rounded-full font-bold shadow-md hover:border-blue-200 transition">Learn More</button>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="absolute -top-10 -left-10 text-6xl animate-bounce">🎨</div>
+                <div class="absolute -bottom-10 -right-10 text-6xl animate-pulse">🚀</div>
+                <div class="rounded-[60px] overflow-hidden border-8 border-white shadow-2xl rotate-2">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800" alt="Students">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-20 bg-blue-50/50">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h3 class="text-pink-500 font-bold uppercase tracking-widest text-sm">Our Classes</h3>
+            <h2 class="text-4xl font-black text-gray-800 mt-2 mb-12">Educational Programs</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="kid-card-modern p-8 group border-b-8 border-blue-400">
+                    <div class="w-20 h-20 bg-blue-100 rounded-2xl mx-auto flex items-center justify-center text-4xl mb-6 group-hover:rotate-12 transition">🧸</div>
+                    <h4 class="text-xl font-black text-gray-800">Pre-School</h4>
+                    <p class="text-gray-500 text-sm mt-4">Ages 3-5 Years. Learning through play and colors.</p>
+                </div>
+                <div class="kid-card-modern p-8 group border-b-8 border-pink-400">
+                    <div class="w-20 h-20 bg-pink-100 rounded-2xl mx-auto flex items-center justify-center text-4xl mb-6 group-hover:rotate-12 transition">📚</div>
+                    <h4 class="text-xl font-black text-gray-800">Primary Education</h4>
+                    <p class="text-gray-500 text-sm mt-4">Ages 6-12 Years. Comprehensive academic foundation.</p>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <div class="fixed bottom-10 right-10 z-50">
+        <button onclick="toggleAdminPanel()" class="w-16 h-16 bg-gradient-to-tr from-purple-600 to-blue-600 rounded-full text-white text-2xl shadow-2xl flex items-center justify-center hover:scale-110 transition">⚙️</button>
+    </div>
+
 </body>
 </html>
-        
